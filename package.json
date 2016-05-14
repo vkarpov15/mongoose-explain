@@ -1,6 +1,6 @@
 {
   "name": "mongoose-explain",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Valeri Karpov <val@karpov.io>",
   "description": "Log mongoose .explain() output for your mongoose .find() and .findOne() calls to the console",
   "devDependencies": {
