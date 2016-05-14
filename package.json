@@ -1,0 +1,32 @@
+{
+  "name": "mongoose-explain",
+  "version": "0.1.0",
+  "author": "Valeri Karpov <val@karpov.io>",
+  "description": "Log mongoose .explain() output for your mongoose .find() and .findOne() calls to the console",
+  "devDependencies": {
+    "acquit": "0.4.1",
+    "acquit-ignore": "0.0.3",
+    "acquit-markdown": "0.0.5",
+    "istanbul": "0.4.2",
+    "mocha": "2.0.0",
+    "mongodb": "2.1.x",
+    "mongoose": "4.4.0"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "license": "Apache 2.0",
+  "main": "int32.js",
+  "peerDependencies": {
+    "mongoose": ">= 4.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vkarpov15/mongoose-explain.git"
+  },
+  "scripts": {
+    "coverage": "istanbul cover _mocha -- -R spec ./test/*",
+    "docs": "node docs.js",
+    "test": "mocha ./test/*"
+  }
+}
