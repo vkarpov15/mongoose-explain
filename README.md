@@ -13,9 +13,7 @@ var schema = new Schema({
   options: String
 });
 
-schema.plugin(explain, {
-  callback: function(res) { explainResults.push(res); }
-});
+schema.plugin(explain);
 
 var Author = mongoose.model('Author', schema, 'author');
 
