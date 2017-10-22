@@ -33,6 +33,12 @@ module.exports = function(schema, pluginOptions) {
     });
   });
 
+  if (pluginOptions.aggregate !== false) {
+    instrumentAggregate(schema, pluginOptions);
+  }
+}
+
+function instrumentAggregate(schema, pluginOptions) {
   schema.post('aggregate', function(res, next) {
     if (this.options.explain) {
       return next();
