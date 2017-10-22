@@ -67,4 +67,21 @@ describe('mongoose-explain', function() {
       done();
     });
   });
+
+  it('explain with aggregate()', function(done) {
+    var explainResults = [];
+
+    schema.plugin(explain, {
+      callback: function(res) { explainResults.push(res); }
+    });
+
+    var Author = mongoose.model('Author3', schema, 'author');
+
+    Author.aggregate([{ $match: { title: 'Professional AngularJS' } }], function(error, res) {
+      assert.ifError(error);
+      assert.equal(res.length, 1);
+      assert.equal(explainResults.length, 1);
+      done();
+    });
+  });
 });
