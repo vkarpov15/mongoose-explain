@@ -1,5 +1,5 @@
 # mongoose-explain
-Log mongoose `.explain()` output for your mongoose `.find()` and `.findOne()` calls to the console
+Log mongoose `.explain()` output for your mongoose `.find()`, `.findOne()`, and `.aggregate()` calls to the console
 
 ## Example
 
