@@ -10,7 +10,7 @@
     "istanbul": "0.4.2",
     "mocha": "3.0.2",
     "mongodb": "~2.2.9",
-    "mongoose": "git+ssh://git@github.com/Automattic/mongoose.git#4.13"
+    "mongoose": "~4.13"
   },
   "engines": {
     "node": ">= 4.0.0"
@@ -18,7 +18,7 @@
   "license": "Apache 2.0",
   "main": "index.js",
   "peerDependencies": {
-    "mongoose": ">= 4.4.0"
+    "mongoose": "^4.13.0"
   },
   "repository": {
     "type": "git",
