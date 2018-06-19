@@ -1,3 +1,7 @@
+'use strict';
+
+const get = require('lodash.get');
+
 module.exports = function(schema, pluginOptions) {
   schema.post('findOne', function(res, next) {
     if (this.options.explain) {
@@ -7,7 +11,7 @@ module.exports = function(schema, pluginOptions) {
     var options = { explain: true };
     options.fields = this._castFields(this._fields);
     this._collection.findOne(this._conditions, options, function(error, stats) {
-      if (pluginOptions && pluginOptions.callback) {
+      if (get(pluginOptions, 'callback') != null) {
         pluginOptions.callback(stats);
       } else {
         console.dir(stats, { depth: null, colors: true });
@@ -24,7 +28,7 @@ module.exports = function(schema, pluginOptions) {
     var options = { explain: true };
     options.fields = this._castFields(this._fields);
     this._collection.find(this._conditions, options, function(error, stats) {
-      if (pluginOptions && pluginOptions.callback) {
+      if (get(pluginOptions, 'callback') != null) {
         pluginOptions.callback(stats);
       } else {
         console.dir(stats, { depth: null, colors: true });
@@ -33,7 +37,7 @@ module.exports = function(schema, pluginOptions) {
     });
   });
 
-  if (pluginOptions.aggregate !== false) {
+  if (get(pluginOptions, 'aggregate') !== false) {
     instrumentAggregate(schema, pluginOptions);
   }
 }
