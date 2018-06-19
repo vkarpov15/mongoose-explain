@@ -1,6 +1,6 @@
 {
   "name": "mongoose-explain",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Valeri Karpov <val@karpov.io>",
   "description": "Log mongoose .explain() output for your mongoose .find() and .findOne() calls to the console",
   "dependencies": {
@@ -21,7 +21,7 @@
   "license": "Apache 2.0",
   "main": "index.js",
   "peerDependencies": {
-    "mongoose": "^4.13.0"
+    "mongoose": "4.x || 5.x"
   },
   "repository": {
     "type": "git",
