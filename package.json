@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "author": "Valeri Karpov <val@karpov.io>",
   "description": "Log mongoose .explain() output for your mongoose .find() and .findOne() calls to the console",
+  "dependencies": {
+    "lodash.get": "4.4.2"
+  },
   "devDependencies": {
     "acquit": "0.5.1",
     "acquit-ignore": "0.0.3",
@@ -10,7 +13,7 @@
     "istanbul": "0.4.2",
     "mocha": "3.0.2",
     "mongodb": "~2.2.9",
-    "mongoose": "~4.13"
+    "mongoose": "5.x"
   },
   "engines": {
     "node": ">= 4.0.0"
