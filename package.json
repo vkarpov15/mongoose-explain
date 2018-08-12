@@ -11,7 +11,7 @@
     "acquit-ignore": "0.0.3",
     "acquit-markdown": "0.0.5",
     "istanbul": "0.4.2",
-    "mocha": "3.0.2",
+    "mocha": "5.x",
     "mongodb": "~2.2.9",
     "mongoose": "5.x"
   },
