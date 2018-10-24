@@ -55,7 +55,7 @@ describe('mongoose-explain', function() {
     var explainResults = [];
 
     schema.plugin(explain, {
-      callback: function(res) { explainResults.push(res); }
+      callback: function(res, query) { explainResults.push([res, query]); }
     });
 
     var Author = mongoose.model('Author2', schema, 'author');
@@ -64,6 +64,8 @@ describe('mongoose-explain', function() {
       assert.ifError(error);
       assert.equal(doc.author, 'Val');
       assert.equal(explainResults.length, 1);
+      assert.equal(explainResults[0][1].model, Author);
+      assert.equal(explainResults[0][1].op, 'findOne');
       done();
     });
   });
@@ -72,7 +74,7 @@ describe('mongoose-explain', function() {
     var explainResults = [];
 
     schema.plugin(explain, {
-      callback: function(res) { explainResults.push(res); }
+      callback: function(res, query) { explainResults.push([res, query]); }
     });
 
     var Author = mongoose.model('Author3', schema, 'author');
@@ -81,6 +83,7 @@ describe('mongoose-explain', function() {
       assert.ifError(error);
       assert.equal(res.length, 1);
       assert.equal(explainResults.length, 1);
+      assert.equal(explainResults[0][1]._model, Author);
       done();
     });
   });
