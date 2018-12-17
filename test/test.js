@@ -33,6 +33,10 @@ describe('mongoose-explain', function() {
     });
   });
 
+  after(function() {
+    return mongoose.disconnect();
+  });
+
   it('explain with find (gh-2572)', function(done) {
     var explainResults = [];
 
